@@ -1,0 +1,14 @@
+<mat-accordion multi>
+	<mat-expansion-panel>
+		<mat-expansion-panel-header>
+			<mat-panel-title>Programming Languages</mat-panel-title>
+		</mat-expansion-panel-header>
+		<mat-list>
+			<mat-list-item *ngFor="let language of languages">
+				<span matListItemTitle>{{language.name}}</span>
+				<mat-icon matListItemIcon *ngIf="language.icon" [svgIcon]="language.icon"></mat-icon>
+			</mat-list-item>
+		</mat-list>
+		<footer>Programming language icons by <a target="_blank" href="https://icons8.com">Icons8</a></footer>
+	</mat-expansion-panel>
+</mat-accordion>
