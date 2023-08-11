@@ -3,7 +3,7 @@
 	[
 		{
 			"path": ".",
-			"folder_exclude_patterns": ["node_modules", ".vscode"],
+			"folder_exclude_patterns": ["node_modules", ".vscode", ".angular"],
 			"binary_file_patterns": ["*.ico", "*.jpeg", "*.jpg", "*.png", "*.webp"]
 		}
 	]
