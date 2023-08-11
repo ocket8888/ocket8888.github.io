@@ -1,9 +1,13 @@
 import { NgModule } from "@angular/core";
+import { MatButtonModule } from "@angular/material/button"
+import { MatCardModule } from "@angular/material/card";
+import { MatIconModule } from "@angular/material/icon";
+import { MatTabsModule } from "@angular/material/tabs";
 import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /**
  * AppModule is the only module in this simple app.
@@ -14,9 +18,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 		AppComponent
 	],
 	imports: [
-		BrowserModule,
 		AppRoutingModule,
-  BrowserAnimationsModule
+		BrowserAnimationsModule,
+		BrowserModule,
+		MatButtonModule,
+		MatCardModule,
+		MatIconModule,
+		MatTabsModule,
 	],
 	providers: [],
 })
