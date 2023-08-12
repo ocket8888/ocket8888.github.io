@@ -63,6 +63,24 @@ export class SkillsComponent {
 			name: "TypeScript",
 		}
 	];
+	public readonly tech: readonly Readonly<Language>[] = [
+		{
+			icon: "docker",
+			name: "Docker",
+		},
+		{
+			icon: "angular",
+			name: "Angular",
+		},
+		{
+			icon: "node",
+			name: "NodeJS",
+		},
+		{
+			icon: "git",
+			name: "Git",
+		}
+	];
 
 	constructor(private readonly iconRegistry: MatIconRegistry, private readonly sanitizer: DomSanitizer) {
 		this.addIcon("C++", "c++.svg");
@@ -77,6 +95,10 @@ export class SkillsComponent {
 		this.addIcon("HTML", "html.svg");
 		this.addIcon("CSS", "css.svg");
 		this.addIcon("bash", "bash.svg");
+		this.addIcon("docker", "docker.svg");
+		this.addIcon("angular", "angular.svg");
+		this.addIcon("git", "git.svg");
+		this.addIcon("node", "node.svg");
 	}
 
 	private addIcon(name: string, asset: string) {
