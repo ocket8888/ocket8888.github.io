@@ -13,9 +13,13 @@
 				<mat-tab label="Skills">
 					<ocket8888-skills></ocket8888-skills>
 				</mat-tab>
-				<mat-tab label="Repositories"></mat-tab>
 				<mat-tab label="Education"></mat-tab>
 				<mat-tab label="Employment History"></mat-tab>
+				<mat-tab label="Repositories">
+					<mat-list>
+						<ocket8888-repo *ngFor="let repo of repos | async" [repo]="repo"></ocket8888-repo>
+					</mat-list>
+				</mat-tab>
 			</mat-tab-group>
 		</mat-card-content>
 	</div>

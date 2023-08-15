@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+import { RepoComponent } from "./repo/repo.component";
 import { SkillComponent } from "./skills/skill/skill.component";
 import { SkillsComponent } from "./skills/skills.component";
 
@@ -23,6 +24,7 @@ import { SkillsComponent } from "./skills/skills.component";
 		AppComponent,
 		SkillsComponent,
 		SkillComponent,
+		RepoComponent
 	],
 	imports: [
 		AppRoutingModule,
