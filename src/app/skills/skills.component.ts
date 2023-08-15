@@ -1,11 +1,8 @@
 import { Component } from "@angular/core";
-import { MatIconRegistry } from "@angular/material/icon"
+import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
 
-interface Language {
-	icon?: string;
-	name: string;
-}
+import type { Skill } from "./skill/skill.component";
 
 @Component({
 	selector: "ocket8888-skills",
@@ -13,7 +10,7 @@ interface Language {
 	templateUrl: "./skills.component.html",
 })
 export class SkillsComponent {
-	public readonly languages: readonly Readonly<Language>[] = [
+	public readonly languages: readonly Readonly<Skill>[] = [
 		{
 			icon: "C",
 			name: "C",
@@ -63,7 +60,7 @@ export class SkillsComponent {
 			name: "TypeScript",
 		}
 	];
-	public readonly tech: readonly Readonly<Language>[] = [
+	public readonly tech: readonly Readonly<Skill>[] = [
 		{
 			icon: "docker",
 			name: "Docker",
@@ -79,6 +76,16 @@ export class SkillsComponent {
 		{
 			icon: "git",
 			name: "Git",
+		}
+	];
+	public readonly markupLanguages: readonly Readonly<Skill>[] = [
+		{
+			icon: "markdown",
+			name: "Markdown",
+		},
+		{
+			icon: "latex",
+			name: "LaTeX",
 		}
 	];
 
@@ -99,6 +106,8 @@ export class SkillsComponent {
 		this.addIcon("angular", "angular.svg");
 		this.addIcon("git", "git.svg");
 		this.addIcon("node", "node.svg");
+		this.addIcon("markdown", "markdown.svg");
+		this.addIcon("latex", "latex.svg");
 	}
 
 	private addIcon(name: string, asset: string) {

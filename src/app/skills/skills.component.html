@@ -4,10 +4,7 @@
 			<mat-panel-title>Programming Languages</mat-panel-title>
 		</mat-expansion-panel-header>
 		<mat-list>
-			<mat-list-item *ngFor="let language of languages">
-				<span matListItemTitle>{{language.name}}</span>
-				<mat-icon matListItemIcon *ngIf="language.icon" [svgIcon]="language.icon"></mat-icon>
-			</mat-list-item>
+			<ocket8888-skill *ngFor="let language of languages" [skill]="language"></ocket8888-skill>
 		</mat-list>
 	</mat-expansion-panel>
 	<mat-expansion-panel>
@@ -15,10 +12,15 @@
 			<mat-panel-title>Technologies &amp; Frameworks</mat-panel-title>
 		</mat-expansion-panel-header>
 		<mat-list>
-			<mat-list-item *ngFor="let t of tech">
-				<span matListItemTitle>{{t.name}}</span>
-				<mat-icon matListItemIcon *ngIf="t.icon" [svgIcon]="t.icon"></mat-icon>
-			</mat-list-item>
+			<ocket8888-skill *ngFor="let t of tech" [skill]="t"></ocket8888-skill>
+		</mat-list>
+	</mat-expansion-panel>
+	<mat-expansion-panel>
+		<mat-expansion-panel-header>
+			<mat-panel-title>Markup Languages</mat-panel-title>
+		</mat-expansion-panel-header>
+		<mat-list>
+			<ocket8888-skill *ngFor="let language of markupLanguages" [skill]="language"></ocket8888-skill>
 		</mat-list>
 	</mat-expansion-panel>
 </mat-accordion>

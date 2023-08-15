@@ -1,5 +1,5 @@
-import { NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
+import { NgModule } from "@angular/core";
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
 import { MatExpansionModule } from "@angular/material/expansion";
@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+import { SkillComponent } from "./skills/skill/skill.component";
 import { SkillsComponent } from "./skills/skills.component";
 
 /**
@@ -20,7 +21,8 @@ import { SkillsComponent } from "./skills/skills.component";
 	bootstrap: [AppComponent],
 	declarations: [
 		AppComponent,
-		SkillsComponent
+		SkillsComponent,
+		SkillComponent,
 	],
 	imports: [
 		AppRoutingModule,
