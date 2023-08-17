@@ -141,4 +141,15 @@ export class SkillsComponent {
 		const url = this.sanitizer.bypassSecurityTrustResourceUrl(`/assets/${encodeURIComponent(asset)}`);
 		this.iconRegistry.addSvgIcon(name, url);
 	}
+
+	/**
+	 * A tracking function for {@link Skill}s.
+	 *
+	 * @param _ Item index (unused).
+	 * @param skill The skill to identify
+	 * @returns Something by which the `skill` may be uniquely identified.
+	 */
+	public track(_: unknown, skill: Skill): unknown {
+		return skill.name;
+	}
 }

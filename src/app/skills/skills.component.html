@@ -4,7 +4,7 @@
 			<mat-panel-title>Programming Languages</mat-panel-title>
 		</mat-expansion-panel-header>
 		<mat-list>
-			<ocket8888-skill *ngFor="let language of languages" [skill]="language"></ocket8888-skill>
+			<ocket8888-skill *ngFor="let language of languages; trackBy: track" [skill]="language"></ocket8888-skill>
 		</mat-list>
 	</mat-expansion-panel>
 	<mat-expansion-panel>
@@ -12,7 +12,7 @@
 			<mat-panel-title>Technologies &amp; Frameworks</mat-panel-title>
 		</mat-expansion-panel-header>
 		<mat-list>
-			<ocket8888-skill *ngFor="let t of tech" [skill]="t"></ocket8888-skill>
+			<ocket8888-skill *ngFor="let t of tech; trackBy: track" [skill]="t"></ocket8888-skill>
 		</mat-list>
 	</mat-expansion-panel>
 	<mat-expansion-panel>
@@ -20,7 +20,7 @@
 			<mat-panel-title>Markup Languages</mat-panel-title>
 		</mat-expansion-panel-header>
 		<mat-list>
-			<ocket8888-skill *ngFor="let language of markupLanguages" [skill]="language"></ocket8888-skill>
+			<ocket8888-skill *ngFor="let language of markupLanguages; trackBy: track" [skill]="language"></ocket8888-skill>
 		</mat-list>
 	</mat-expansion-panel>
 </mat-accordion>

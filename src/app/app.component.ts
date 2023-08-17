@@ -18,4 +18,15 @@ export class AppComponent {
 	constructor(ghAPI: GitHubAPIService) {
 		this.repos = ghAPI.getRepos();
 	}
+
+	/**
+	 * A tracking function for iterating things with unique IDs.
+	 *
+	 * @param _ Item index (unused).
+	 * @param item Item in question.
+	 * @returns Something which uniquely identifies the `item`.
+	 */
+	public track(_: unknown, item: {id: number}): unknown {
+		return item.id;
+	}
 }

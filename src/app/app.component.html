@@ -17,7 +17,7 @@
 				<mat-tab label="Employment History"></mat-tab>
 				<mat-tab label="Repositories">
 					<mat-list>
-						<ocket8888-repo *ngFor="let repo of repos | async" [repo]="repo"></ocket8888-repo>
+						<ocket8888-repo *ngFor="let repo of repos | async; trackBy: track" [repo]="repo"></ocket8888-repo>
 					</mat-list>
 				</mat-tab>
 			</mat-tab-group>
