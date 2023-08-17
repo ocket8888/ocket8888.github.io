@@ -1,4 +1,8 @@
 <mat-list-item>
 	<span matListItemTitle>{{skill.name}}</span>
 	<mat-icon matListItemIcon *ngIf="skill.icon" [svgIcon]="skill.icon"></mat-icon>
+	<span matListItemLine class="item-line">
+		<meter max="100" min="0" [low]="low" [value]="skill.level" title="{{levelDescription()}}">{{skill.level}}</meter>
+		<mat-icon class="help-icon" [matTooltip]="levelDescription()">help</mat-icon>
+	</span>
 </mat-list-item>
