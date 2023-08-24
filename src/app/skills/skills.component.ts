@@ -4,6 +4,8 @@ import { DomSanitizer } from "@angular/platform-browser";
 
 import type { Skill } from "./skill/skill.component";
 
+const random = ()=>(Math.random()-0.5);
+
 /**
  * The Skills page/tab contains all of my various skills.
  */
@@ -73,8 +75,13 @@ export class SkillsComponent {
 			icon: "ts",
 			level: 100,
 			name: "TypeScript",
-		}
-	].sort(()=>Math.random()-0.5);
+		},
+		{
+			icon: "haskell",
+			level: 20,
+			name: "Haskell",
+		},
+	].sort(random);
 	public readonly tech: readonly Readonly<Skill>[] = [
 		{
 			icon: "docker",
@@ -92,11 +99,36 @@ export class SkillsComponent {
 			name: "NodeJS",
 		},
 		{
+			icon: "next.js",
+			level: 40,
+			name: "Next.js",
+		},
+		{
 			icon: "git",
 			level: 80,
 			name: "Git",
-		}
-	].sort(()=>(Math.random()-0.5));
+		},
+		{
+			icon: "linux",
+			level: 100,
+			name: "Linux Programming",
+		},
+		{
+			icon: "windows",
+			level: 70,
+			name: "Windows Programming",
+		},
+		{
+			icon: "macOS",
+			level: 80,
+			name: "MacOS",
+		},
+		{
+			icon: "react",
+			level: 50,
+			name: "React",
+		},
+	].sort(random);
 	public readonly markupLanguages: readonly Readonly<Skill>[] = [
 		{
 			icon: "markdown",
@@ -107,8 +139,38 @@ export class SkillsComponent {
 			icon: "latex",
 			level: 90,
 			name: "LaTeX",
+		},
+		{
+			level: 95,
+			name: "reStructuredText",
 		}
-	].sort(()=>(Math.random()-0.5));
+	].sort(random);
+	public readonly other: readonly Readonly<Skill>[] = [
+		{
+			level: 80,
+			name: "SEO",
+		},
+		{
+			level: 100,
+			name: "Data Modeling",
+		},
+		{
+			level: 100,
+			name: "REST API design",
+		},
+		{
+			level: 100,
+			name: "Code Review",
+		},
+		{
+			level: 90,
+			name: "Peer Programming"
+		},
+		{
+			level: 100,
+			name: "Accessible Design"
+		}
+	].sort(random);
 
 	constructor(private readonly iconRegistry: MatIconRegistry, private readonly sanitizer: DomSanitizer) {
 		this.addIcon("C++", "c++.svg");
@@ -129,6 +191,12 @@ export class SkillsComponent {
 		this.addIcon("node", "node.svg");
 		this.addIcon("markdown", "markdown.svg");
 		this.addIcon("latex", "latex.svg");
+		this.addIcon("linux", "linux.svg");
+		this.addIcon("windows", "windows.svg");
+		this.addIcon("macOS", "macos.svg");
+		this.addIcon("next.js", "next.js.svg");
+		this.addIcon("haskell", "haskell.svg");
+		this.addIcon("react", "react.svg");
 	}
 
 	/**

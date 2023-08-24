@@ -23,5 +23,13 @@
 			<ocket8888-skill *ngFor="let language of markupLanguages; trackBy: track" [skill]="language"></ocket8888-skill>
 		</mat-list>
 	</mat-expansion-panel>
+	<mat-expansion-panel>
+		<mat-expansion-panel-header>
+			<mat-panel-title>Miscellaneous</mat-panel-title>
+		</mat-expansion-panel-header>
+		<mat-list>
+			<ocket8888-skill *ngFor="let o of other; trackBy: track" [skill]="o"></ocket8888-skill>
+		</mat-list>
+	</mat-expansion-panel>
 </mat-accordion>
 <footer>Icons by <a target="_blank" href="https://icons8.com">Icons8</a></footer>
