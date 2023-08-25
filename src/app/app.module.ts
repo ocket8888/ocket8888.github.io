@@ -15,6 +15,7 @@ import { AppComponent } from "./app.component";
 import { RepoComponent } from "./repo/repo.component";
 import { SkillComponent } from "./skills/skill/skill.component";
 import { SkillsComponent } from "./skills/skills.component";
+import { EducationComponent } from './education/education.component';
 
 /**
  * AppModule is the only module in this simple app.
@@ -25,7 +26,8 @@ import { SkillsComponent } from "./skills/skills.component";
 		AppComponent,
 		SkillsComponent,
 		SkillComponent,
-		RepoComponent
+		RepoComponent,
+		EducationComponent,
 	],
 	imports: [
 		AppRoutingModule,
