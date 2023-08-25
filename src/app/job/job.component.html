@@ -1,0 +1,18 @@
+<mat-card appearance="outlined">
+	<mat-card-header>
+		<mat-card-title>{{job.title}}</mat-card-title>
+		<mat-card-subtitle>at {{job.company}}</mat-card-subtitle>
+	</mat-card-header>
+	<mat-card-content>
+		<mat-list>
+			<!-- Simple strings can use object identity for tracking -->
+			<!-- eslint-disable-next-line @angular-eslint/template/use-track-by-function -->
+			<mat-list-item *ngFor="let accomplishment of job.accomplishments">{{accomplishment}}</mat-list-item>
+		</mat-list>
+	</mat-card-content>
+	<mat-card-footer>
+		<p>From <time [attr.datetime]="job.start.toISOString()">{{job.start | date}}</time>&nbsp;<span *ngIf="job.end; then hasEnd else noEnd"></span></p>
+		<ng-template #hasEnd>to <time [attr.datetime]="job.end?.toISOString()">{{job.end | date}}</time>.</ng-template>
+		<ng-template #noEnd>and currently still working here.</ng-template>
+	</mat-card-footer>
+</mat-card>

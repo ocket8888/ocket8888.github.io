@@ -16,7 +16,9 @@
 				<mat-tab label="Education">
 					<ocket8888-education></ocket8888-education>
 				</mat-tab>
-				<mat-tab label="Employment History"></mat-tab>
+				<mat-tab label="Employment History">
+					<ocket8888-job *ngFor="let job of jobs; trackBy: trackJob" [job]="job"></ocket8888-job>
+				</mat-tab>
 				<mat-tab label="Repositories">
 					<mat-list>
 						<ocket8888-repo *ngFor="let repo of repos | async; trackBy: track" [repo]="repo"></ocket8888-repo>

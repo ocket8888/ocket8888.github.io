@@ -13,10 +13,11 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+import { EducationComponent } from "./education/education.component";
+import { JobComponent } from "./job/job.component";
 import { RepoComponent } from "./repo/repo.component";
 import { SkillComponent } from "./skills/skill/skill.component";
 import { SkillsComponent } from "./skills/skills.component";
-import { EducationComponent } from './education/education.component';
 
 /**
  * AppModule is the only module in this simple app.
@@ -29,6 +30,7 @@ import { EducationComponent } from './education/education.component';
 		SkillComponent,
 		RepoComponent,
 		EducationComponent,
+		JobComponent,
 	],
 	imports: [
 		AppRoutingModule,

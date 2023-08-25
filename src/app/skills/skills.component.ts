@@ -4,7 +4,7 @@ import { DomSanitizer } from "@angular/platform-browser";
 
 import type { Skill } from "./skill/skill.component";
 
-const random = ()=>(Math.random()-0.5);
+const random = (): number => (Math.random()-0.5);
 
 /**
  * The Skills page/tab contains all of my various skills.
