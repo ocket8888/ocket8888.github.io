@@ -5,7 +5,9 @@ import { GitHubAPIService, Repository } from "./git-hub-api.service";
 import type { Job } from "./job/job.component";
 
 const ATC: Readonly<Repository> = {
-	description: "Apache Traffic Control i…ontent Delivery Network",
+	description: "Apache Traffic Control is an open-source implementation of a Content Delivery Network",
+	// This name is decided by the GitHub API and is beyond my control
+	// eslint-disable-next-line @typescript-eslint/naming-convention
 	html_url: "https://github.com/apache/trafficcontrol",
 	language: "Go",
 	name: "Apache Traffic Control",
