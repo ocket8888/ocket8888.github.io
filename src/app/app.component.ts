@@ -18,9 +18,9 @@ export class AppComponent {
 	public readonly jobs: readonly Readonly<Job>[] = [
 		{
 			accomplishments: [
-				"Developed the Apache Traﬃc Control (ATC) CDN control-plane management software suite",
+				"Developed the Apache Traffic Control (ATC) CDN control-plane management software suite",
 				"Front-end (originally) in Angular.js with jQuery and Bootstrap",
-				"Spearheaded and led development eﬀort to modernize using Angular (v12-16)",
+				"Spearheaded and led development effort to modernize using Angular (v12-16)",
 				"Back-end(s) in Go, Java, Perl",
 				"Led REST API design discussions; drafted data modeling design documents",
 				"Develop and maintain API clients in Python (PyPI), TypeScript (NPM), and Go",
@@ -33,6 +33,32 @@ export class AppComponent {
 			start: new Date("2017-05-17"),
 			title: "Software Engineer IV",
 		},
+		{
+			accomplishments: [
+				"Developed Incode government accounting software",
+				"Front-end in Angular.js using TypeScript and SCSS",
+				"Back-end in C# and Transact SQL"
+			],
+			company: "Tyler Technologies",
+			end: new Date("2017-05-17"),
+			start: new Date("2016-06-05"),
+			title: "Software Developer"
+		},
+		{
+			accomplishments: [
+				"Created patent automation webapp using Angular, TypeScript, and HTML5/SCSS",
+				"Based on an app framework translated out of Vue.js",
+				"Back-end using TypeScript for a NodeJS Express web server",
+				"Used natural language processing to convert English sentences into business logic",
+				"Created and implemented a full REST API data model from server-side to client-side, using a PostgreSQL data store",
+				"Directly managed project methodologies including client expectations and development pace and prioritization",
+				"Set a deployment schedule to continuously deliver into a production environment weekly for three years",
+			],
+			company: "Fenix AI LLC",
+			end: new Date("2023-02-28"),
+			start: new Date("2020-01-01"),
+			title: "Freelance Webapp Engineer"
+		}
 	];
 
 	constructor(ghAPI: GitHubAPIService) {
