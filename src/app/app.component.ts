@@ -1,8 +1,18 @@
 import { Component } from "@angular/core";
-import { Observable } from "rxjs";
+import { Observable, map } from "rxjs";
 
 import { GitHubAPIService, Repository } from "./git-hub-api.service";
 import type { Job } from "./job/job.component";
+
+const ATC: Readonly<Repository> = {
+	description: "Apache Traffic Control i…ontent Delivery Network",
+	html_url: "https://github.com/apache/trafficcontrol",
+	language: "Go",
+	name: "Apache Traffic Control",
+	owner: {
+		login: "apache",
+	},
+} as Repository;
 
 /**
  * The webapp root.
@@ -62,7 +72,7 @@ export class AppComponent {
 	];
 
 	constructor(ghAPI: GitHubAPIService) {
-		this.repos = ghAPI.getRepos();
+		this.repos = ghAPI.getRepos().pipe(map((rs) => [ATC].concat(rs)));
 	}
 
 	/**
