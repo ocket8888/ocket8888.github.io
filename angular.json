@@ -65,19 +65,19 @@
 				"serve": {
 					"builder": "@angular-devkit/build-angular:dev-server",
 					"configurations": {
-						"production": {
-							"browserTarget": "ocket8888.github.io:build:production"
+            "production": {
+              "buildTarget": "ocket8888.github.io:build:production"
 						},
-						"development": {
-							"browserTarget": "ocket8888.github.io:build:development"
+            "development": {
+              "buildTarget": "ocket8888.github.io:build:development"
 						}
 					},
 					"defaultConfiguration": "development"
 				},
 				"extract-i18n": {
 					"builder": "@angular-devkit/build-angular:extract-i18n",
-					"options": {
-						"browserTarget": "ocket8888.github.io:build"
+          "options": {
+            "buildTarget": "ocket8888.github.io:build"
 					}
 				},
 				"test": {
