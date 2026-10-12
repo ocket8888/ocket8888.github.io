@@ -15,6 +15,7 @@ const random = (): number => (Math.random()-0.5);
 	templateUrl: "./skills.component.html",
 })
 export class SkillsComponent {
+	/** Programming languages that I know. */
 	public readonly languages: readonly Readonly<Skill>[] = [
 		{
 			icon: "C",
@@ -82,6 +83,8 @@ export class SkillsComponent {
 			name: "Haskell",
 		},
 	].sort(random);
+
+	/** Technologies and frameworks with which I'm familiar. */
 	public readonly tech: readonly Readonly<Skill>[] = [
 		{
 			icon: "docker",
@@ -100,7 +103,7 @@ export class SkillsComponent {
 		},
 		{
 			icon: "next.js",
-			level: 40,
+			level: 20,
 			name: "Next.js",
 		},
 		{
@@ -129,6 +132,11 @@ export class SkillsComponent {
 			name: "React",
 		},
 	].sort(random);
+
+	/**
+	 * Markup Languages that I know (not counting HTML/CSS which is listed under
+	 * {@link languages}).
+	 */
 	public readonly markupLanguages: readonly Readonly<Skill>[] = [
 		{
 			icon: "markdown",
@@ -145,6 +153,8 @@ export class SkillsComponent {
 			name: "reStructuredText",
 		}
 	].sort(random);
+
+	/** Other (mostly soft) skills I possess. */
 	public readonly other: readonly Readonly<Skill>[] = [
 		{
 			level: 80,
@@ -169,6 +179,10 @@ export class SkillsComponent {
 		{
 			level: 100,
 			name: "Accessible Design"
+		},
+		{
+			level: 95,
+			name: "Code Quality Assessment and Repair"
 		}
 	].sort(random);
 
