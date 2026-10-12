@@ -10,6 +10,7 @@ import { MatTabsModule } from "@angular/material/tabs";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -36,6 +37,7 @@ import { SkillsComponent } from "./skills/skills.component";
 		AppRoutingModule,
 		BrowserAnimationsModule,
 		BrowserModule,
+		FontAwesomeModule,
 		HttpClientModule,
 		MatButtonModule,
 		MatCardModule,
