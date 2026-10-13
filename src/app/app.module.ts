@@ -1,4 +1,4 @@
-import { provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
+import { provideHttpClient, withInterceptorsFromDi, withXhr } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
@@ -42,5 +42,5 @@ import { SkillsComponent } from "./skills/skills.component";
 		MatIconModule,
 		MatListModule,
 		MatTabsModule,
-		MatTooltipModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+		MatTooltipModule], providers: [provideHttpClient(withXhr(), withInterceptorsFromDi())] })
 export class AppModule { }

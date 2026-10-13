@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
 
 /**
  * A Skill is something I'm good at.
@@ -39,6 +39,7 @@ const enum SkillLevel {
 	selector: "ocket8888-skill[skill]",
 	standalone: false,
 	styleUrls: ["./skill.component.scss"],
+	changeDetection: ChangeDetectionStrategy.Eager,
 	templateUrl: "./skill.component.html",
 })
 export class SkillComponent {

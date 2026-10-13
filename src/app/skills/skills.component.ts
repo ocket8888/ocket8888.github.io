@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
 
@@ -13,6 +13,7 @@ const random = (): number => (Math.random()-0.5);
 	selector: "ocket8888-skills",
 	standalone: false,
 	styleUrls: ["./skills.component.scss"],
+	changeDetection: ChangeDetectionStrategy.Eager,
 	templateUrl: "./skills.component.html",
 })
 export class SkillsComponent {

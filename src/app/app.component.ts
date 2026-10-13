@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { Observable, map } from "rxjs";
 
 import { GitHubAPIService, Repository } from "./git-hub-api.service";
@@ -23,6 +23,7 @@ const ATC: Readonly<Repository> = {
 	selector: "ocket8888-root",
 	standalone: false,
 	styleUrls: ["./app.component.scss"],
+	changeDetection: ChangeDetectionStrategy.Eager,
 	templateUrl: "./app.component.html",
 })
 export class AppComponent {

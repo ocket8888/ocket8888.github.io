@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
 
 import type { Repository } from "../git-hub-api.service";
 
@@ -10,6 +10,7 @@ import type { Repository } from "../git-hub-api.service";
 	selector: "ocket8888-repo[repo]",
 	standalone: false,
 	styleUrls: ["./repo.component.scss"],
+	changeDetection: ChangeDetectionStrategy.Eager,
 	templateUrl: "./repo.component.html",
 })
 export class RepoComponent {

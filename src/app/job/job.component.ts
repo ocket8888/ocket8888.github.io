@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
 
 /**
  * Job objects contain the data needed to render a Job.
@@ -18,6 +18,7 @@ export interface Job {
 	selector: "ocket8888-job[job]",
 	standalone: false,
 	styleUrls: ["./job.component.scss"],
+	changeDetection: ChangeDetectionStrategy.Eager,
 	templateUrl: "./job.component.html",
 })
 export class JobComponent {
