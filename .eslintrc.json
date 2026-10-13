@@ -277,9 +277,6 @@
 						"allowWithDecorator": true
 					}
 				],
-				"@typescript-eslint/no-duplicate-imports": [
-					"error"
-				],
 				"@typescript-eslint/no-dynamic-delete": "error",
 				"@typescript-eslint/no-floating-promises": "off",
 				"@typescript-eslint/no-inferrable-types": [
@@ -367,6 +364,12 @@
 					"error",
 					{
 						"ignoreExternal": true
+					}
+				],
+				"import/no-duplicates": [
+					"error",
+					{
+						"prefer-inline": true
 					}
 				],
 				"import/no-self-import": "error",
