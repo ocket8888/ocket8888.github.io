@@ -1,4 +1,4 @@
-import { HttpClientModule } from "@angular/common/http";
+import { provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
@@ -23,8 +23,7 @@ import { SkillsComponent } from "./skills/skills.component";
 /**
  * AppModule is the only module in this simple app.
  */
-@NgModule({
-	bootstrap: [AppComponent],
+@NgModule({ bootstrap: [AppComponent],
 	declarations: [
 		AppComponent,
 		SkillsComponent,
@@ -32,13 +31,10 @@ import { SkillsComponent } from "./skills/skills.component";
 		RepoComponent,
 		EducationComponent,
 		JobComponent,
-	],
-	imports: [
-		AppRoutingModule,
+	], imports: [AppRoutingModule,
 		BrowserAnimationsModule,
 		BrowserModule,
 		FontAwesomeModule,
-		HttpClientModule,
 		MatButtonModule,
 		MatCardModule,
 		MatDividerModule,
@@ -46,8 +42,5 @@ import { SkillsComponent } from "./skills/skills.component";
 		MatIconModule,
 		MatListModule,
 		MatTabsModule,
-		MatTooltipModule,
-	],
-	providers: [],
-})
+		MatTooltipModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
