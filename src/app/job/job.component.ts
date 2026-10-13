@@ -15,10 +15,10 @@ export interface Job {
  * A JobComponent represents a job I've held.
  */
 @Component({
+	changeDetection: ChangeDetectionStrategy.Eager,
 	selector: "ocket8888-job[job]",
 	standalone: false,
 	styleUrls: ["./job.component.scss"],
-	changeDetection: ChangeDetectionStrategy.Eager,
 	templateUrl: "./job.component.html",
 })
 export class JobComponent {

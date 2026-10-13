@@ -20,10 +20,10 @@ const ATC: Readonly<Repository> = {
  * The webapp root.
  */
 @Component({
+	changeDetection: ChangeDetectionStrategy.Eager,
 	selector: "ocket8888-root",
 	standalone: false,
 	styleUrls: ["./app.component.scss"],
-	changeDetection: ChangeDetectionStrategy.Eager,
 	templateUrl: "./app.component.html",
 })
 export class AppComponent {

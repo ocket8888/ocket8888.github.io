@@ -36,10 +36,10 @@ const enum SkillLevel {
  * Represents a single Skill.
  */
 @Component({
+	changeDetection: ChangeDetectionStrategy.Eager,
 	selector: "ocket8888-skill[skill]",
 	standalone: false,
 	styleUrls: ["./skill.component.scss"],
-	changeDetection: ChangeDetectionStrategy.Eager,
 	templateUrl: "./skill.component.html",
 })
 export class SkillComponent {

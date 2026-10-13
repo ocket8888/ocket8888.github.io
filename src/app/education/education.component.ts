@@ -8,10 +8,10 @@ import { Component, ChangeDetectionStrategy } from "@angular/core";
  * programmatically, so that was faster.
  */
 @Component({
+	changeDetection: ChangeDetectionStrategy.Eager,
 	selector: "ocket8888-education",
 	standalone: false,
 	styleUrls: ["./education.component.scss"],
-	changeDetection: ChangeDetectionStrategy.Eager,
 	templateUrl: "./education.component.html",
 })
 export class EducationComponent {

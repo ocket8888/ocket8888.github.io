@@ -5,8 +5,6 @@
 	</mat-card-header>
 	<mat-card-content>
 		<mat-list>
-			<!-- Simple strings can use object identity for tracking -->
-			<!-- eslint-disable-next-line @angular-eslint/template/use-track-by-function -->
 			@for (accomplishment of job.accomplishments; track accomplishment) {
 				<mat-list-item>{{accomplishment}}</mat-list-item>
 			}

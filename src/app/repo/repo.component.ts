@@ -7,10 +7,10 @@ import type { Repository } from "../git-hub-api.service";
  * possible I'll change that in the future in some way.
  */
 @Component({
+	changeDetection: ChangeDetectionStrategy.Eager,
 	selector: "ocket8888-repo[repo]",
 	standalone: false,
 	styleUrls: ["./repo.component.scss"],
-	changeDetection: ChangeDetectionStrategy.Eager,
 	templateUrl: "./repo.component.html",
 })
 export class RepoComponent {

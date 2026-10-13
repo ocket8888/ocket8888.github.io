@@ -1,44 +1,32 @@
-{
-	"root": true,
-	"ignorePatterns": [
-		"projects/**/*"
-	],
-	"overrides": [
-		{
-			"files": [
-				"*.ts"
-			],
-			"rules": {
-				"@typescript-eslint/explicit-function-return-type": "error"
-			}
+// @ts-check
+import { defineConfig } from "eslint/config";
+import angular from "angular-eslint";
+import jsdoc from "eslint-plugin-jsdoc";
+import arrow from "eslint-plugin-prefer-arrow";
+import tseslint from "typescript-eslint";
+
+export default defineConfig([
+	{
+		files: ["**/*.ts"],
+		plugins: {
+			jsdoc,
+			"prefer-arrow": arrow,
+			"@angular-eslint": angular.tsPlugin,
+			"@typescript-eslint": tseslint.plugin,
 		},
-		{
-			"files": [
-				"*.ts",
-				"*.js"
-			],
-			"parserOptions": {
-				"project": [
-					"tsconfig.json"
-				],
-				"createDefaultProgram": true
+		languageOptions: {
+			parser: tseslint.parser,
+			parserOptions: {
+				sourceType: "module",
+				projectService: true,
 			},
-			"extends": [
-				"plugin:@angular-eslint/template/process-inline-templates"
-			],
-			"plugins": [
-				"@typescript-eslint",
-				"@angular-eslint",
-				"eslint-plugin-import",
-				"eslint-plugin-jsdoc",
-				"eslint-plugin-prefer-arrow"
-			],
-			"rules": {
+		},
+		processor: angular.processInlineTemplates,
+		rules: {
 				"@typescript-eslint/interface-name-prefix": "off",
 				"@angular-eslint/component-class-suffix": "error",
 				"@angular-eslint/contextual-lifecycle": "error",
 				"@angular-eslint/directive-class-suffix": "error",
-				"@angular-eslint/no-conflicting-lifecycle": "error",
 				"@angular-eslint/no-input-rename": "error",
 				"@angular-eslint/no-inputs-metadata-property": "error",
 				"@angular-eslint/no-output-native": "error",
@@ -73,7 +61,6 @@
 					"undefined"
 				],
 				"id-match": "error",
-				"import/no-deprecated": "warn",
 				"max-classes-per-file": "off",
 				"no-caller": "error",
 				"no-cond-assign": "error",
@@ -146,7 +133,6 @@
 					}
 				],
 				"quotes": "off",
-				"@typescript-eslint/type-annotation-spacing": "error",
 				"@angular-eslint/component-selector": [
 					"error",
 					{
@@ -165,38 +151,10 @@
 				],
 				"@typescript-eslint/array-type": "off",
 				"@typescript-eslint/await-thenable": "error",
-				"@typescript-eslint/ban-types": [
-					"error",
-					{
-						"extendDefaults": false,
-						"types": {
-							"Object": {
-								"message": "Avoid using the `Object` type. Did you mean `object`?"
-							},
-							"Function": {
-								"message": "Avoid using the `Function` type. Prefer a specific function type, like `() => void`."
-							},
-							"Boolean": {
-								"message": "Avoid using the `Boolean` type. Did you mean `boolean`?"
-							},
-							"Number": {
-								"message": "Avoid using the `Number` type. Did you mean `number`?"
-							},
-							"String": {
-								"message": "Avoid using the `String` type. Did you mean `string`?"
-							},
-							"Symbol": {
-								"message": "Avoid using the `Symbol` type. Did you mean `symbol`?"
-							},
-							"BigInt": {
-								"message": "Avoid using the `BigInt` type. Did you mean `bigint`?"
-							}
-						}
-					}
-				],
 				"@typescript-eslint/consistent-type-assertions": "error",
 				"@typescript-eslint/consistent-type-definitions": "error",
 				"@typescript-eslint/dot-notation": "error",
+				"@typescript-eslint/explicit-function-return-type": "error",
 				"@typescript-eslint/explicit-member-accessibility": [
 					"error",
 					{
@@ -207,23 +165,6 @@
 					}
 				],
 				"@typescript-eslint/explicit-module-boundary-types": "error",
-				"@typescript-eslint/indent": [
-					"error",
-					"tab"
-				],
-				"@typescript-eslint/member-delimiter-style": [
-					"error",
-					{
-						"multiline": {
-							"delimiter": "semi",
-							"requireLast": true
-						},
-						"singleline": {
-							"delimiter": "semi",
-							"requireLast": false
-						}
-					}
-				],
 				"@typescript-eslint/member-ordering": "off",
 				"@typescript-eslint/naming-convention": [
 					"error",
@@ -269,6 +210,7 @@
 				],
 				"@typescript-eslint/no-empty-function": "error",
 				"@typescript-eslint/no-empty-interface": "error",
+				"@typescript-eslint/no-empty-object-type": "error",
 				"@typescript-eslint/no-explicit-any": "error",
 				"@typescript-eslint/no-extraneous-class": [
 					"error",
@@ -296,12 +238,41 @@
 				"@typescript-eslint/no-non-null-assertion": "error",
 				"@typescript-eslint/no-redeclare": "error",
 				"@typescript-eslint/no-require-imports": "error",
+				"@typescript-eslint/no-restricted-types": [
+					"error",
+					{
+						"types": {
+							"Object": {
+								"message": "Avoid using the `Object` type. Did you mean `object`?"
+							},
+							"Function": {
+								"message": "Avoid using the `Function` type. Prefer a specific function type, like `() => void`."
+							},
+							"Boolean": {
+								"message": "Avoid using the `Boolean` type. Did you mean `boolean`?"
+							},
+							"Number": {
+								"message": "Avoid using the `Number` type. Did you mean `number`?"
+							},
+							"String": {
+								"message": "Avoid using the `String` type. Did you mean `string`?"
+							},
+							"Symbol": {
+								"message": "Avoid using the `Symbol` type. Did you mean `symbol`?"
+							},
+							"BigInt": {
+								"message": "Avoid using the `BigInt` type. Did you mean `bigint`?"
+							}
+						}
+					}
+				],
 				"@typescript-eslint/no-shadow": "error",
 				"@typescript-eslint/no-this-alias": "error",
 				"@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
 				"@typescript-eslint/no-unnecessary-qualifier": "error",
 				"@typescript-eslint/no-unnecessary-type-arguments": "error",
 				"@typescript-eslint/no-unnecessary-type-assertion": "error",
+				"@typescript-eslint/no-unsafe-function-type": "error",
 				"@typescript-eslint/no-unused-expressions": "error",
 				"@typescript-eslint/no-unused-vars": "error",
 				"@typescript-eslint/no-use-before-define": "error",
@@ -310,16 +281,6 @@
 				"@typescript-eslint/prefer-function-type": "error",
 				"@typescript-eslint/prefer-readonly": "error",
 				"@typescript-eslint/promise-function-async": "error",
-				"@typescript-eslint/quotes": [
-					"error",
-					"double",
-					{
-						"avoidEscape": true
-					}
-				],
-				"@typescript-eslint/semi": [
-					"error"
-				],
 				"@typescript-eslint/typedef": "off",
 				"jsdoc/no-types": "error",
 				"jsdoc/require-description": "error",
@@ -356,69 +317,71 @@
 					"1tbs"
 				],
 				"class-methods-use-this": "off",
-				"import/export": "error",
-				"import/first": "error",
-				"import/newline-after-import": "error",
-				"import/no-cycle": [
-					"error",
-					{
-						"ignoreExternal": true
-					}
-				],
-				"import/no-duplicates": [
-					"error",
-					{
-						"prefer-inline": true
-					}
-				],
-				"import/no-self-import": "error",
-				"import/no-useless-path-segments": [
-					"error",
-					{
-						"commonjs": true,
-						"noUselessIndex": true
-					}
-				],
-				"import/order": [
-					"error",
-					{
-						"alphabetize": {
-							"order": "asc"
-						},
-						"groups": [
-							"builtin",
-							"external",
-							"internal",
-							"parent",
-							"sibling"
-						],
-						"pathGroups": [
-							{
-								"group": "builtin",
-								"pattern": "zone.js/**/*",
-								"position": "before"
-							},
-							{
-								"group": "external",
-								"pattern": "(@(angular|fortawesome)|chart.js|rxjs)*/**/*",
-								"position": "before"
-							},
-							{
-								"group": "internal",
-								"pattern": "src/**/*"
-							}
-						],
-						"pathGroupsExcludedImportTypes": [
-							"zone.js/**/*",
-							"@angular*/**/*",
-							"@fortawesome*/**/*",
-							"chart.js",
-							"rxjs"
-						],
-						"newlines-between": "always",
-						"warnOnUnassignedImports": true
-					}
-				],
+				// eslint-plugin-import does not yet support eslint v10: https://github.com/import-js/eslint-plugin-import/issues/3278
+				// "import/export": "error",
+				// "import/first": "error",
+				// "import/newline-after-import": "error",
+				// "import/no-cycle": [
+				// 	"error",
+				// 	{
+				// 		"ignoreExternal": true
+				// 	}
+				// ],
+				// "import/no-deprecated": "warn",
+				// "import/no-duplicates": [
+				// 	"error",
+				// 	{
+				// 		"prefer-inline": true
+				// 	}
+				// ],
+				// "import/no-self-import": "error",
+				// "import/no-useless-path-segments": [
+				// 	"error",
+				// 	{
+				// 		"commonjs": true,
+				// 		"noUselessIndex": true
+				// 	}
+				// ],
+				// "import/order": [
+				// 	"error",
+				// 	{
+				// 		"alphabetize": {
+				// 			"order": "asc"
+				// 		},
+				// 		"groups": [
+				// 			"builtin",
+				// 			"external",
+				// 			"internal",
+				// 			"parent",
+				// 			"sibling"
+				// 		],
+				// 		"pathGroups": [
+				// 			{
+				// 				"group": "builtin",
+				// 				"pattern": "zone.js/**/*",
+				// 				"position": "before"
+				// 			},
+				// 			{
+				// 				"group": "external",
+				// 				"pattern": "(@(angular|fortawesome)|chart.js|rxjs)*/**/*",
+				// 				"position": "before"
+				// 			},
+				// 			{
+				// 				"group": "internal",
+				// 				"pattern": "src/**/*"
+				// 			}
+				// 		],
+				// 		"pathGroupsExcludedImportTypes": [
+				// 			"zone.js/**/*",
+				// 			"@angular*/**/*",
+				// 			"@fortawesome*/**/*",
+				// 			"chart.js",
+				// 			"rxjs"
+				// 		],
+				// 		"newlines-between": "always",
+				// 		"warnOnUnassignedImports": true
+				// 	}
+				// ],
 				"linebreak-style": [
 					"error",
 					"unix"
@@ -468,45 +431,23 @@
 						"natural": true
 					}
 				],
-				"valid-jsdoc": [
-					"error",
-					{
-						"matchDescription": ".+",
-						"requireReturn": false,
-						"requireReturnType": false,
-						"requireParamType": false,
-						"prefer": {
-							"return": "returns"
-						}
-					}
-				]
-			}
-		},
-		{
-			"files": [
-				"*.html"
-			],
-			"extends": [
-				"plugin:@angular-eslint/template/recommended"
-			],
-			// Rules that are commented out in this block are not available
-			// until Angular 15, and should be un-commented once that upgrade is
-			// done.
-			"rules": {
+			},
+	},
+	{
+		files: ["**/*.html"],
+		extends: [angular.configs.templateRecommended, angular.configs.templateAccessibility],
+		rules: {
 				"@angular-eslint/template/alt-text": "error",
 				"@angular-eslint/template/elements-content": "error",
-				// "@angular-eslint/template/accessibility-interactive-supports-focus": "error",
+				"@angular-eslint/template/interactive-supports-focus": "error",
 				"@angular-eslint/template/label-has-associated-control": "error",
-				// "@angular-eslint/template/accessibility-role-has-required-aria": "error",
+				"@angular-eslint/template/role-has-required-aria": "error",
 				"@angular-eslint/template/table-scope": "error",
 				"@angular-eslint/template/valid-aria": "error",
-				// I want to see the results of this before committing to it,
-				// which is difficult to do until I can actually use it.
-				// "@angular-eslint/template/attributes-order": "warn",
+				"@angular-eslint/template/attributes-order": "error",
 				"@angular-eslint/template/banana-in-box": "error",
 				"@angular-eslint/template/button-has-type": "error",
-				// Currently a warning because of suspected false positives.
-				"@angular-eslint/template/click-events-have-key-events": "warn",
+				"@angular-eslint/template/click-events-have-key-events": "error",
 				"@angular-eslint/template/conditional-complexity": [
 					"error",
 					{
@@ -514,8 +455,7 @@
 					}
 				],
 				// Warning because it's difficult to know exactly when a
-				// refactor is strictly necessary and also because fixing this
-				// would be a huge changeset.
+				// refactor is strictly necessary.
 				"@angular-eslint/template/cyclomatic-complexity": [
 					"warn",
 					{
@@ -525,20 +465,16 @@
 				"@angular-eslint/template/eqeqeq": "error",
 				"@angular-eslint/template/mouse-events-have-key-events": "error",
 				"@angular-eslint/template/no-any": "error",
-				// Currently a warning because of rampant use, and fixing such
-				// usages would be out-of-scope for the PR adding this linting,
-				// IMO.
-				"@angular-eslint/template/no-autofocus": "warn",
+				"@angular-eslint/template/no-autofocus": "error",
 				"@angular-eslint/template/no-distracting-elements": "error",
 				"@angular-eslint/template/no-duplicate-attributes": "error",
-				// "@angular-eslint/template/no-inline-styles": "warn",
-				// "@angular-eslint/template/no-interpolation-in-attributes": "error",
+				"@angular-eslint/template/no-inline-styles": "warn",
+				"@angular-eslint/template/no-interpolation-in-attributes": "error",
 				"@angular-eslint/template/no-negated-async": "error",
 				"@angular-eslint/template/no-positive-tabindex": "error",
 				// Warning because not always necessary, and appears to have no
 				// options to control when it is required.
 				"@angular-eslint/template/use-track-by-function": "warn"
-			}
-		}
-	]
-}
+			},
+	},
+]);

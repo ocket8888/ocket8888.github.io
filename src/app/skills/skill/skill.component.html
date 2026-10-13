@@ -4,7 +4,7 @@
 		<mat-icon matListItemIcon [svgIcon]="skill.icon"></mat-icon>
 	}
 	<span matListItemLine class="item-line">
-		<meter max="100" min="0" [low]="low" [value]="skill.level" title="{{levelDescription()}}">{{skill.level}}</meter>
+		<meter max="100" min="0" [title]="levelDescription()" [low]="low" [value]="skill.level">{{skill.level}}</meter>
 		<mat-icon class="help-icon" [matTooltip]="levelDescription()">help</mat-icon>
 	</span>
 </mat-list-item>

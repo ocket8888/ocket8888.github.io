@@ -10,10 +10,10 @@ const random = (): number => (Math.random()-0.5);
  * The Skills page/tab contains all of my various skills.
  */
 @Component({
+	changeDetection: ChangeDetectionStrategy.Eager,
 	selector: "ocket8888-skills",
 	standalone: false,
 	styleUrls: ["./skills.component.scss"],
-	changeDetection: ChangeDetectionStrategy.Eager,
 	templateUrl: "./skills.component.html",
 })
 export class SkillsComponent {
