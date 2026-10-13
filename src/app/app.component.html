@@ -17,11 +17,15 @@
 					<ocket8888-education></ocket8888-education>
 				</mat-tab>
 				<mat-tab label="Employment History">
-					<ocket8888-job *ngFor="let job of jobs; trackBy: trackJob" [job]="job"></ocket8888-job>
+					@for (job of jobs; track trackJob($index, job)) {
+						<ocket8888-job [job]="job"></ocket8888-job>
+					}
 				</mat-tab>
 				<mat-tab label="Repositories">
 					<mat-list>
-						<ocket8888-repo *ngFor="let repo of repos | async; trackBy: track" [repo]="repo"></ocket8888-repo>
+						@for (repo of repos | async; track track($index, repo)) {
+							<ocket8888-repo [repo]="repo"></ocket8888-repo>
+						}
 					</mat-list>
 				</mat-tab>
 			</mat-tab-group>
