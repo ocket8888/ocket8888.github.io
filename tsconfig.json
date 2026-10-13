@@ -2,7 +2,7 @@
 {
 	"compileOnSave": false,
 	"compilerOptions": {
-		"outDir": "./dist/out-tsc",
+		"outDir": "./dist/ocket8888.github.io",
 		"forceConsistentCasingInFileNames": true,
 		"esModuleInterop": true,
 		"strict": true,
