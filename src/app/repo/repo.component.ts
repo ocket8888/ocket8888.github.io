@@ -8,6 +8,7 @@ import type { Repository } from "../git-hub-api.service";
  */
 @Component({
 	selector: "ocket8888-repo[repo]",
+	standalone: false,
 	styleUrls: ["./repo.component.scss"],
 	templateUrl: "./repo.component.html",
 })

@@ -37,6 +37,7 @@ const enum SkillLevel {
  */
 @Component({
 	selector: "ocket8888-skill[skill]",
+	standalone: false,
 	styleUrls: ["./skill.component.scss"],
 	templateUrl: "./skill.component.html",
 })

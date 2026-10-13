@@ -9,6 +9,7 @@ import { Component } from "@angular/core";
  */
 @Component({
 	selector: "ocket8888-education",
+	standalone: false,
 	styleUrls: ["./education.component.scss"],
 	templateUrl: "./education.component.html",
 })

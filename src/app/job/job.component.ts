@@ -16,6 +16,7 @@ export interface Job {
  */
 @Component({
 	selector: "ocket8888-job[job]",
+	standalone: false,
 	styleUrls: ["./job.component.scss"],
 	templateUrl: "./job.component.html",
 })

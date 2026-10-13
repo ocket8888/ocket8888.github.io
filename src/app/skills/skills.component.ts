@@ -11,6 +11,7 @@ const random = (): number => (Math.random()-0.5);
  */
 @Component({
 	selector: "ocket8888-skills",
+	standalone: false,
 	styleUrls: ["./skills.component.scss"],
 	templateUrl: "./skills.component.html",
 })

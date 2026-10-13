@@ -21,6 +21,7 @@ const ATC: Readonly<Repository> = {
  */
 @Component({
 	selector: "ocket8888-root",
+	standalone: false,
 	styleUrls: ["./app.component.scss"],
 	templateUrl: "./app.component.html",
 })
