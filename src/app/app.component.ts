@@ -32,6 +32,21 @@ export class AppComponent {
 	public readonly jobs: readonly Readonly<Job>[] = [
 		{
 			accomplishments: [
+				"Worked full-stack on multiple contracts across several diverse teams in a tight time frame",
+				"Front-end in Angular with Bootstrap and PrimeNG",
+				"Back-end(s) in Go, C#, and Java/Kotlin",
+				"Spearheaded and led development effort to eliminate untyped legacy code and standardize code quality",
+				"Context-switching quickly and effectively to deliver updates across 5 different software products",
+				"Developed and maintained tools and scripts used to facilitate testing and development across many teams",
+				"Delivered mission-critical, secure solutions to systems responsible for tens of thousands of devices",
+				"Gave regular talks on language features and best practices to educate junior members across the company",
+			],
+			company: "Sherpa 6",
+			start: new Date("2024-10-01"),
+			title: "Senior Software Engineer"
+		},
+		{
+			accomplishments: [
 				"Developed the Apache Traffic Control (ATC) CDN control-plane management software suite",
 				"Front-end (originally) in Angular.js with jQuery and Bootstrap",
 				"Spearheaded and led development effort to modernize using Angular (v12-16)",
@@ -40,10 +55,11 @@ export class AppComponent {
 				"Develop and maintain API clients in Python (PyPI), TypeScript (NPM), and Go",
 				"Pioneered Docker-based testing, demo, and development environments",
 				"Through heavy participation in the open-source community, became ATC Project Management Committee member",
-				"Led the ATC working group for the past few years",
+				"Led the ATC working group for three years",
 				"Acted as Release Manager for the 5.x series of ATC versions",
 			],
 			company: "Comcast",
+			end: new Date("2023-10-01"),
 			start: new Date("2017-05-17"),
 			title: "Software Engineer IV",
 		},
