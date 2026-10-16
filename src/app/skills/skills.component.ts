@@ -90,12 +90,12 @@ export class SkillsComponent {
 	public readonly tech: readonly Readonly<Skill>[] = [
 		{
 			icon: "docker",
-			level: 80,
+			level: 95,
 			name: "Docker",
 		},
 		{
 			icon: "angular",
-			level: 95,
+			level: 100,
 			name: "Angular",
 		},
 		{
@@ -110,7 +110,7 @@ export class SkillsComponent {
 		},
 		{
 			icon: "git",
-			level: 80,
+			level: 100,
 			name: "Git",
 		},
 		{
@@ -132,6 +132,16 @@ export class SkillsComponent {
 			icon: "react",
 			level: 50,
 			name: "React",
+		},
+		{
+			icon: "claude",
+			level: 100,
+			name: "AI-driven Development"
+		},
+		{
+			icon: "wails",
+			level: 50,
+			name: "Wails v3"
 		},
 	].sort(random);
 
@@ -213,6 +223,8 @@ export class SkillsComponent {
 		this.addIcon("next.js", "next.js.svg");
 		this.addIcon("haskell", "haskell.svg");
 		this.addIcon("react", "react.svg");
+		this.addIcon("claude", "claude.svg");
+		this.addIcon("wails", "wails.svg");
 	}
 
 	/**

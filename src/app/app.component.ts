@@ -40,6 +40,7 @@ export class AppComponent {
 				"Developed and maintained tools and scripts used to facilitate testing and development across many teams",
 				"Delivered mission-critical, secure solutions to systems responsible for tens of thousands of devices",
 				"Gave regular talks on language features and best practices to educate junior members across the company",
+				"Used AI coding assistance to drastically improve rate of delivery of new features and bugfixes",
 			],
 			company: "Sherpa 6",
 			start: new Date("2024-10-01"),
@@ -102,7 +103,7 @@ export class AppComponent {
 	 * @param item Item in question.
 	 * @returns Something which uniquely identifies the `item`.
 	 */
-	public track(_: unknown, item: {id: number}): unknown {
+	public track(_: unknown, item: { id: number }): unknown {
 		return item.id;
 	}
 
@@ -113,7 +114,7 @@ export class AppComponent {
 	 * @param item Item in question.
 	 * @returns Something which uniquely identifies the `item`.
 	 */
-	public trackJob(_: unknown, item: {title: string}): unknown {
+	public trackJob(_: unknown, item: { title: string }): unknown {
 		return item.title;
 	}
 }
