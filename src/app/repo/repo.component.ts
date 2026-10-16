@@ -14,5 +14,10 @@ import type { Repository } from "../git-hub-api.service";
 	templateUrl: "./repo.component.html",
 })
 export class RepoComponent {
-	@Input() public repo!: Repository;
+	@Input() public repo!: {
+		description: string;
+		html_url: string;
+		language: string;
+		name: string;
+	};
 }
